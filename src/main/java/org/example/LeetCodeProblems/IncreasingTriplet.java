@@ -1,4 +1,4 @@
-package org.example;
+package org.example.LeetCodeProblems;
 
 public class IncreasingTriplet {
     public boolean increasingTriplet(int[] nums) {

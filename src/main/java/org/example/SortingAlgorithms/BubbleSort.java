@@ -1,7 +1,11 @@
-package org.example.sort;
+package org.example.SortingAlgorithms;
 
 public class BubbleSort implements Sort {
-    public int[] sort(int[] numbers) {
+    private int [] numbers;
+    BubbleSort(int[] numbers){
+        this.numbers = numbers;
+    }
+    public int[] sort() {
         int count1 = 0;
         int count2 = 0;
         for (int j = 0; j < numbers.length; j++) {

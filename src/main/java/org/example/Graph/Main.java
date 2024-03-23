@@ -1,8 +1,8 @@
-package org.example;
+package org.example.Graph;
 
-import java.util.ArrayList;
+import org.example.Utility.UserInput;
+
 import java.util.Arrays;
-import java.util.Scanner;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.

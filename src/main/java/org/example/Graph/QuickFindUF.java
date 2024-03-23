@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Graph;
 
 public class QuickFindUF {
     private int[] id;

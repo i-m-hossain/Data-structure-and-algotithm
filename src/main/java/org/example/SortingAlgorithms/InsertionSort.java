@@ -1,8 +1,12 @@
-package org.example.sort;
+package org.example.SortingAlgorithms;
 
 public class InsertionSort implements Sort {
+    private int[] numbers;
+    InsertionSort(int[] numbers){
+        this.numbers = numbers;
+    }
 
-    public int[] sort(int[] numbers) {
+    public int[] sort() {
         for (int i = 1; i < numbers.length; i++) {
             // checking current element is greater than the previous element
             if (numbers[i] < numbers[i - 1]) {

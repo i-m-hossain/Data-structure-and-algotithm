@@ -1,6 +1,4 @@
-package org.example;
-
-import java.util.Arrays;
+package org.example.Graph;
 
 public class UndirectedGraph {
     int V; // vertices
