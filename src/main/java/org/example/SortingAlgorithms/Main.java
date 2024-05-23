@@ -7,12 +7,13 @@ public class Main {
 //        BubbleSort bubble = new BubbleSort(numbers);
 //        InsertionSort insertion = new InsertionSort(numbers);
 //        SelectionSort selection = new SelectionSort(numbers);
-        QuickSort quick = new QuickSort(numbers);
-//
+//        QuickSort quick = new QuickSort(numbers);
+        MergeSort merge = new MergeSort(numbers);
 //        int[] result = bubble.sort();
 //        int[] result = insertion.sort();
 //        int[] result = selection.sort();
-        int[] result = quick.sort();
+//        int[] result = quick.sort();
+        int[] result = merge.sort();
         for (int number : result) {
             System.out.println(number);
         }
