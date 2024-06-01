@@ -9,4 +9,12 @@ public interface LinkedListMethods {
 
     public void traverseLinkedList();
 
+    public Boolean searchItemRecursive(Node head, int value);
+
+    public Boolean searchItemIterative(int value);
+
+    public int findLengthOfLinkedListIterative();
+
+    public int findLengthOfLinkedListRecursive(Node node, int length);
+
 }
