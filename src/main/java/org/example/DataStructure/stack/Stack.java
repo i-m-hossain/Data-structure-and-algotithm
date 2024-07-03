@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Stack {
     private final int capacity;
-    private int[] stack;
+    private final int[] stack;
     private int top;
     Stack(int capacity){
         this.top =-1;
@@ -13,6 +13,7 @@ public class Stack {
     }
     public void push(int num){
         //check if stack is full
+        System.out.println("pushing num to stack:"+num);
         if(this.isFull()){
             System.out.println("The Stack is full, i.e. Stack Overflow, can't add");
             return;
@@ -57,9 +58,15 @@ public class Stack {
         stack.push(50);
         System.out.println("popped element:" + stack.pop());
         System.out.println("is stack empty:" + stack.isEmpty());
+        System.out.println("popped element:" + stack.pop());
+        System.out.println("popped element:" + stack.pop());
+        System.out.println("popped element:" + stack.pop());
         stack.push(60);
         System.out.println("current top element:"+ stack.top());
+        System.out.println("popped element:" + stack.pop());
+
         System.out.println("is stack full:"  + stack.isFull());
+        stack.push(200);
         System.out.println(stack);
     }
 }
