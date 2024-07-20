@@ -1,33 +1,33 @@
-package org.example.DataStructure.stack;
+package org.example.DataStructure.StackQueue;
 
 import java.util.Arrays;
 
-public class Stack {
+public class StackWithArray {
     private final int capacity;
-    private final int[] stack;
+    private final String [] stack;
     private int top;
-    Stack(int capacity){
+    StackWithArray(int capacity){
         this.top =-1;
         this.capacity=capacity;
-        this.stack = new int[capacity];
+        this.stack = new String[capacity];
     }
-    public void push(int num){
+    public void push(String name){
         //check if stack is full
-        System.out.println("pushing num to stack:"+num);
+        System.out.println("pushing num to stack:"+name);
         if(this.isFull()){
             System.out.println("The Stack is full, i.e. Stack Overflow, can't add");
             return;
         }
         this.top += 1;
-        stack[this.top] = num;
+        stack[this.top] = name;
     }
-    public int pop(){
+    public String pop(){
         if(this.isEmpty()){
             System.out.println("The stack is empty, i.e. Stack Underflow, can't pop");
         }
         return stack[top--]; //post decrement
     }
-    public int top(){
+    public String top(){
         if(this.isEmpty()){
             System.out.println("The stack is empty");
         }
@@ -50,23 +50,19 @@ public class Stack {
     }
 
     public static void main(String[] args) {
-        Stack stack = new Stack(5);
-        stack.push(10);
-        stack.push(20);
-        stack.push(30);
-        stack.push(40);
-        stack.push(50);
+        StackWithArray stack = new StackWithArray(5);
+        stack.push("www.google.com");
+        stack.push("www.youtube.com");
+        stack.push("www.twitter.com");
+        stack.push("www.facebook.com");
+        stack.push("www.amazon.com");
         System.out.println("popped element:" + stack.pop());
         System.out.println("is stack empty:" + stack.isEmpty());
         System.out.println("popped element:" + stack.pop());
         System.out.println("popped element:" + stack.pop());
         System.out.println("popped element:" + stack.pop());
-        stack.push(60);
-        System.out.println("current top element:"+ stack.top());
-        System.out.println("popped element:" + stack.pop());
 
-        System.out.println("is stack full:"  + stack.isFull());
-        stack.push(200);
+        System.out.println("is stack empty:" + stack.isEmpty());
         System.out.println(stack);
     }
 }
