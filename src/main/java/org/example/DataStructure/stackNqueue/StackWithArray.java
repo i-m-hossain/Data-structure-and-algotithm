@@ -1,4 +1,4 @@
-package org.example.DataStructure.StackQueue;
+package org.example.DataStructure.stackNqueue;
 
 import java.util.Arrays;
 

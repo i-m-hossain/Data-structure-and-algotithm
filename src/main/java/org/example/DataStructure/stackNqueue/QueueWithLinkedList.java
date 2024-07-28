@@ -1,4 +1,4 @@
-package org.example.DataStructure.StackQueue;
+package org.example.DataStructure.stackNqueue;
 public class QueueWithLinkedList {
     static final int capacity = 20;
 
@@ -26,10 +26,8 @@ public class QueueWithLinkedList {
             this.first = newNode;
             this.last = newNode;
         } else {
-            // below two lines are very important
-            // which adding a new node to the queue
-            // using call by reference
-            this.last.next = newNode;
+            // adding a new node to the queue i.e. adding a new node to the last node
+            this.last.setNext(newNode); ;
             this.last= newNode;
         }
         this.length++;
@@ -45,9 +43,10 @@ public class QueueWithLinkedList {
         if(this.first == this.last){
             this.last = null;
         }
-        this.first = this.first.next;
+        Node dequeued = this.first;
+        this.first = this.first.getNext();
         this.length --;
-        return this.first;
+        return dequeued;
     }
 
     public boolean isEmpty() {
@@ -77,9 +76,9 @@ public class QueueWithLinkedList {
         q.enqueue("Sadia");
         q.enqueue("Haque");
         q.enqueue("Usha");
-        System.out.println(q);
+//        System.out.println(q);
 
-        System.out.println(q.dequeue().value);
-        System.out.println(q);
+        System.out.println(q.dequeue().getValue());
+//        System.out.println(q);
     }
 }

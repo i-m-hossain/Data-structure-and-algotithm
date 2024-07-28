@@ -1,4 +1,4 @@
-package org.example.SortingAlgorithms;
+package org.example.algorithms.sorting;
 
 public class Main {
     public static void main(String[] args) {
@@ -6,14 +6,14 @@ public class Main {
         numbers = new int[]{6, 9, 12, 2, 5, 78, 3, 56, 7, 90, 54, 76, 89, 87, 90, 865, 43, 21};
 //        BubbleSort bubble = new BubbleSort(numbers);
 //        InsertionSort insertion = new InsertionSort(numbers);
-//        SelectionSort selection = new SelectionSort(numbers);
+        SelectionSort selection = new SelectionSort(numbers);
 //        QuickSort quick = new QuickSort(numbers);
-        MergeSort merge = new MergeSort(numbers);
+
 //        int[] result = bubble.sort();
 //        int[] result = insertion.sort();
-//        int[] result = selection.sort();
+        int[] result = selection.sort();
 //        int[] result = quick.sort();
-        int[] result = merge.sort();
+
         for (int number : result) {
             System.out.println(number);
         }

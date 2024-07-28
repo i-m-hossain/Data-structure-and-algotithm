@@ -1,4 +1,4 @@
-package org.example.DataStructure.StackQueue;
+package org.example.DataStructure.stackNqueue;
 
 public class StackWithLinkedList {
     Node top;
@@ -27,7 +27,7 @@ public class StackWithLinkedList {
         }else{
             Node pointer = this.top;
             this.top = newNode;
-            this.top.next = pointer;
+            this.top.setNext(pointer) ;
         }
         this.length ++;
         return this;
@@ -41,7 +41,7 @@ public class StackWithLinkedList {
             this.bottom = null;
         }
         Node target = this.top;
-        this.top = this.top.next;
+        this.top = this.top.getNext();
         this.length --;
         return target;
     }
@@ -68,12 +68,16 @@ public class StackWithLinkedList {
         stack.push("Youtube");
         stack.push("Twitter");
         stack.push("Discord");
-        stack.pop();
+        stack.push("Discord2");
+        stack.push("Discord3");
+        stack.push("Discord4");
+        stack.push("Discord5");
 //        stack.pop();
 //        stack.pop();
 //        stack.pop();
 //        stack.pop();
-        stack.peek();
+        System.out.println(stack.pop().getValue());
+        System.out.println( stack.peek().getValue());
 
         System.out.println(stack);
     }

@@ -1,8 +1,4 @@
-package org.example.DataStructure.Tree;
-
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Map;
+package org.example.DataStructure.tree;
 
 public class BST {
     private Node root;
@@ -16,8 +12,7 @@ public class BST {
     {
 
         if(this.root == null){
-            Node newNode = new Node(value);
-            this.root = newNode;
+            this.root = new Node(value);
             return this;
         }else{
             return this.recursiveInsert(value, this.root);
@@ -46,20 +41,20 @@ public class BST {
 
     private BST recursiveInsert(int value, Node currentNode){
         Node newNode = new Node(value);
-        if(value< currentNode.value){
-            if(currentNode.left == null){
-                currentNode.left = newNode;
+        if(value< currentNode.getValue()){
+            if(currentNode.getLeft() == null){
+                currentNode.setLeft(newNode);
                 return this;
             }
             //updating the current root to new root
-            return recursiveInsert(value, currentNode.left);
+            return recursiveInsert(value, currentNode.getLeft());
         }else{
-            if(currentNode.right == null){
-                currentNode.right = newNode;
+            if(currentNode.getRight() == null){
+                currentNode.setRight(newNode);
                 return this;
             }
             //updating the current root to new root
-            return recursiveInsert(value, currentNode.right);
+            return recursiveInsert(value, currentNode.getRight());
         }
     }
     /*
@@ -82,13 +77,13 @@ public class BST {
     }
 
     private Node lookupRecursive(int value, Node currentNode){
-        if(value == currentNode.value){
+        if(value == currentNode.getValue()){
             return currentNode;
-        } else if( value < currentNode.value && currentNode.left != null) {
-            currentNode = currentNode.left;
+        } else if( value < currentNode.getValue() && currentNode.getLeft() != null) {
+            currentNode = currentNode.getLeft();
             return this.lookupRecursive(value, currentNode);
-        } else if(value >= currentNode.value && currentNode.right !=null){
-            currentNode = currentNode.right;
+        } else if(value >= currentNode.getValue() && currentNode.getRight() !=null){
+            currentNode = currentNode.getRight();
             return this.lookupRecursive(value, currentNode);
         }
         return null;
@@ -108,28 +103,28 @@ public class BST {
     private boolean removeRecursive(int value, Node currentNode)
     {
         Node parentNode = null;
-        if(value < currentNode.value && currentNode.left != null)
+        if(value < currentNode.getValue() && currentNode.getLeft() != null)
         {
             parentNode = currentNode;
-            currentNode = currentNode.left;
+            currentNode = currentNode.getLeft();
             return removeRecursive(value, currentNode);
         }
-        else if(value > currentNode.value && currentNode.right != null)
+        else if(value > currentNode.getValue() && currentNode.getRight() != null)
         {
             parentNode = currentNode;
-            currentNode = currentNode.right;
+            currentNode = currentNode.getRight();
             return removeRecursive(value, currentNode);
         }
-        else if(value == currentNode.value)
+        else if(value == currentNode.getValue())
         {
             //we have a match get to work
 
             //option 1: No right child
-            if(currentNode.right == null){
+            if(currentNode.getRight() == null){
                 //Todo: complete the code later
             }
             // option 2: Right child doesn't have a left child
-            else if(currentNode.right.left == null){
+            else if(currentNode.getRight().getLeft() == null){
                 //TODO: complete the code later
             }
             //options 3: Right child has a left child

@@ -1,4 +1,4 @@
-package org.example.SortingAlgorithms;
+package org.example.algorithms.sorting;
 
 public class QuickSort implements Sort {
     private int[] numbers;
